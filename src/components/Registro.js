@@ -1,7 +1,27 @@
+import React, { useState } from 'react';
+import './Registro.css';
+import FormSignup from './FormInput';
+
+
 const Registro = () => {
-    return (
-        <h1>Registro Usuario</h1>
-    );
-}
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  function submitForm() {
+    setIsSubmitted(true);
+  }
+  return (
+    <>
+      <div className='form-container'>
+        
+        <div className='form-content-left'>
+          <img className='form-img' src='img/register.svg' alt='imgholder' />
+        </div>
+        
+          <FormSignup submitForm={submitForm} />
+        
+      </div>
+    </>
+  );
+};
 
 export default Registro;
